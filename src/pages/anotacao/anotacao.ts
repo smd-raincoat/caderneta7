@@ -154,7 +154,7 @@ export class AnotacaoPage {
       }
     }
     this.pdfObj = pdfMake.createPdf(docDefinition);
-
+    this.downloadPdf();
   }
 
   downloadPdf(){

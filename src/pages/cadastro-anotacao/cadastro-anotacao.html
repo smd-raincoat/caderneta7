@@ -18,7 +18,7 @@
   <div padding class="slide">
     <h1>Criar ponto</h1>
     <button ion-button block (click)="cameraOptions()">Adicionar foto</button>
-    <img [src]= imagem width="50%" />
+    <img *ngFor="let imagem of cadastroForm.imagem" [src]= imagem width="50%" />
       
     <form (ngSubmit)="logForm()">
 

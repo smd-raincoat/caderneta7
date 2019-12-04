@@ -14,7 +14,7 @@
 <ion-content padding>
   <div class="slide">
     <ion-label><b>Imagem:</b></ion-label>
-    <img [src]= anotacao.imagem  width="50%"/> 
+    <img *ngFor="let imagem of anotacao.imagem" [src]= imagem  width="50%"/> 
     <ion-label><b>Título:</b></ion-label>
     <ion-label>{{anotacao.titulo}}</ion-label>
     <ion-label><b>Data:</b></ion-label>
@@ -31,6 +31,6 @@
     <ion-label><b>Texto:</b></ion-label>
     <ion-label>{{anotacao.texto}}</ion-label>
   </div>
-  <button ion-button full (click)="createPdf()">Criar PDF</button>
-  <button ion-button full (click)="downloadPdf()" [disabled]="!pdfObj">Exportar PDF</button>
+  <button ion-button full (click)="createPdf()">Exportar PDF</button>
+  
 </ion-content>

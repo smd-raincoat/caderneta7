@@ -29,7 +29,7 @@ export class CadastroAnotacaoPage {
     coordenadaY:"",
     altitude:"",
     texto:"",
-    imagem:""
+    imagem:[]
   }
 
   public viagens: any;
@@ -46,7 +46,7 @@ export class CadastroAnotacaoPage {
       coordenadaY:"",
       altitude:"",
       texto:"",
-      imagem:"",
+      imagem:[],
     }
     this.viagens = localStorage.getItem('viagens');
     
@@ -73,7 +73,7 @@ export class CadastroAnotacaoPage {
 
   }
   logForm(){
-    this.cadastroForm.imagem = this.imagem;
+    //this.cadastroForm.imagem = this.imagem;
     this.viagens = localStorage.getItem('viagens');
     this.viagens = JSON.parse(this.viagens);
     this.viagens[localStorage.getItem("indexViagem")].anotacoes.push(this.cadastroForm);
@@ -133,6 +133,7 @@ export class CadastroAnotacaoPage {
         let base64image = 'data:image/jpeg;base64,' + imageData;
         this.imagem = base64image;
         //this.imagens.push(this.imagem);
+        this.cadastroForm.imagem.push(this.imagem);
  
       }, (error) => {
         console.error(error);
@@ -161,6 +162,7 @@ export class CadastroAnotacaoPage {
         let base64image = 'data:image/jpeg;base64,' + imageData;
         this.imagem = base64image;
         //this.imagens.push(this.imagem);
+        this.cadastroForm.imagem.push(this.imagem);
  
       }, (error) => {
         console.error(error);
